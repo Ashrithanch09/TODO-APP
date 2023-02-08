@@ -1,39 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-:root {
-  --clr-bright-blue: hsl(220, 98%, 61%);
-  --bg-lg: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
-  --clr-l-very-light-gray: hsl(0, 0%, 98%);
-  --clr-l-very-light-grayish-blue: hsl(236, 33%, 92%);
-  --clr-l-light-grayish-blue: hsl(233, 11%, 84%);
-  --clr-l-dark-grayish-blue: hsl(236, 9%, 61%);
-  --clr-l-very-dark-grayish-blue: hsl(235, 19%, 35%);
-  --clr-d-very-dark-blue: hsl(235, 21%, 11%);
-  --clr-d-very-dark-desaturated-blue: hsl(235, 24%, 19%);
-  --clr-d-light-grayish-blue: hsl(234, 39%, 85%);
-  --clr-d-light-grayish-blue-hover: hsl(236, 33%, 92%);
-  --clr-d-dark-grayish-blue: hsl(234, 11%, 52%);
-  --clr-d-very-dark-grayish-blue: hsl(233, 14%, 35%);
-  --clr-d-very-dark-grayish-bluer: hsl(237, 14%, 26%);
-}
-
-html {
-  font-size: 18px;
-}
+html,
 body {
-  min-height: 100vh;
-  background-color: black;
-  color: white;
-}
-
-input,
-button {
-  font: inherit;
+  font-family: "Josefin Sans";
 }
