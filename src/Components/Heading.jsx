@@ -7,6 +7,9 @@ const Heading = () => {
     <div>
       <p>Todo</p>
       <img src={Sun} />
+      <p>
+        welcome
+      </p>
     </div>
   );
 };
