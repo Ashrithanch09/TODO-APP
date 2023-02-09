@@ -5,7 +5,7 @@ import Sun from "../assets/icon-sun.svg";
 const Heading = () => {
   return (
     <div>
-      <p>Todo</p>
+      <h1>Todo</h1>
       <img src={Sun} />
     </div>
   );
