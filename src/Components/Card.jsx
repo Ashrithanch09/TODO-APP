@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = () => {
-  return <div>Card</div>;
+	return <div className="max-w-lg"></div>;
 };
 
 export default Card;
