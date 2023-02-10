@@ -1,10 +1,12 @@
 import "./App.css";
+import Footer from "./Components/Footer";
 import Heading from "./Components/Heading";
 
 function App() {
   return (
-    <div className="bg-zinc-900">
+    <div >
       <Heading />
+      <Footer/>
     </div>
   );
 }
