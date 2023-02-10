@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 function Footer() {
@@ -5,5 +6,8 @@ function Footer() {
     <div>Drag and drop to reorder list </div>
   )
 }
+
+export default Footer
+
 
 export default Footer

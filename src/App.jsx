@@ -1,10 +1,11 @@
-import "./App.css";
-import Heading from "./Components/Heading";
+import Card from "./Components/Card";
 
 function App() {
   return (
-    <div className="bg-zinc-900">
-      <Heading />
+    <div
+      className={`bg-dark-vdb min-h-screen w-full bg-hero-pattern bg-no-repeat bg-[length:100%_30%]`}
+    >
+      <Card />
     </div>
   );
 }

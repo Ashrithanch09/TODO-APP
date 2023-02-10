@@ -4,9 +4,9 @@ import Sun from "../assets/icon-sun.svg";
 
 const Heading = () => {
   return (
-    <div>
-      <p>Todo</p>
-      <img src={Sun} />
+    <div className=" flex justify-between items-center font-bold mb-5">
+      <p className="text-3xl tracking-widest uppercase text-light-vlg ">Todo</p>
+      <img src={Sun} className="w-8" />
     </div>
   );
 };
