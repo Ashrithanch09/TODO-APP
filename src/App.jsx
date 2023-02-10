@@ -1,5 +1,3 @@
-import React from "react";
-import "./App.css";
 import Todo from "./Components/Todo";
 import bgDesktop from "./assets/bg-desktop-dark.jpg";
 
@@ -12,6 +10,7 @@ function App() {
 			<Todo />
 		</div>
 	);
+
 }
 
 export default App;
