@@ -1,15 +1,21 @@
 import React from "react";
+import Todo from "./Todo";
 
 const Todos = () => {
+  const list = [
+    "Complete Online Javascript course",
+    "Jog around the park 3x",
+    "10 minutes meditation",
+    "Read for 1 hour",
+    "Pick up groceries",
+    "Complete Todo App on Frontend Mentor",
+  ];
   return (
     <section>
-      <ul>
-        <li className="bg-dark-vdgb">Complete Online Javascript course</li>
-        <li>Jog around the park 3x</li>
-        <li>10 minutes meditation</li>
-        <li>Read for 1 hour</li>
-        <li>Pick up groceries</li>
-        <li>Complete Todo App on Frontend Mentor</li>
+      <ul className="overflow-hidden rounded-tl-lg rounded-tr-lg ">
+        {list.map((each, index) => (
+          <Todo task={each} key={index} />
+        ))}
       </ul>
     </section>
   );
