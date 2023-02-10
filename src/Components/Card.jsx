@@ -3,6 +3,7 @@ import Heading from "./Heading";
 import Todos from "./Todos";
 import CreateTodo from "./CreateTodo";
 import WeirdName from "./WeirdName";
+import Footer from "./Footer";
 
 const Card = () => {
   return (
@@ -11,6 +12,7 @@ const Card = () => {
       <CreateTodo />
       <Todos />
       <WeirdName />
+      <Footer />
     </div>
   );
 };

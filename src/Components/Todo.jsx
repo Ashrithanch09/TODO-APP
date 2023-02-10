@@ -13,7 +13,7 @@ const Todo = ({ task }) => {
     >
       <div
         className={`w-[20px] h-[20px] border border-light-vdgb rounded-[50%]
-         outline-none flex items-center justify-center
+          outline-none flex items-center justify-center
          ${
            clicked ? "bg-gradient-to-r from-gradient-start to-gradient-end" : ""
          }`}
