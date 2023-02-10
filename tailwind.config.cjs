@@ -36,6 +36,9 @@ module.exports = {
     fontWeight: {
       normal: '400',
       bold: '700'
+    },
+    backgroundImage: {
+      'check': "url('/src/assets/icon-check.svg')"
     }
   },
   plugins: [],
