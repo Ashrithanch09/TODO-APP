@@ -1,7 +1,10 @@
-import React from "react";
 
-const Footer = () => {
-  return <div>Footer</div>;
-};
+import React from 'react'
 
-export default Footer;
+function Footer() {
+  return (
+    <div>Drag and drop to reorder list </div>
+  )
+}
+
+export default Footer
