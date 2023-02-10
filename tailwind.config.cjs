@@ -5,7 +5,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+
     colors: {
+
       'light': {
         vlgb: "hsl(236, 33%, 92%)",
         lgb: "hsl(233, 11%, 84%)",
