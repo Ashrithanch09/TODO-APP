@@ -24,8 +24,8 @@ module.exports = {
 				lgb: "hsl(236, 33%, 92%)",
 			},
 			gradient: {
-				from: "hsl(192, 100%, 67%) ",
-				to: "hsl(280, 87%, 65%)",
+				start: "hsl(192, 100%, 67%) ",
+				end: "hsl(280, 87%, 65%)",
 			},
 			brightBlue: "hsl(220, 98%, 61%)",
 		},
@@ -33,10 +33,14 @@ module.exports = {
 			normal: "400",
 			bold: "700",
 		},
-		backgroundImage: {
-			check: "url('/src/assets/icon-check.svg')",
-			"hero-pattern": "url('/src/assets/bg-desktop-dark.jpg')",
-		},
+
+		extend: {
+			backgroundImage: {
+				"check-icon": "url('/src/assets/icon-check.svg')",
+				"hero-pattern": "url('/src/assets/bg-desktop-dark.jpg')",
+			},
+		}
+
 	},
 	plugins: [],
 
