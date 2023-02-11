@@ -3,7 +3,7 @@ import CheckIcon from "../assets/icon-check.svg";
 
 const CreateTodo = () => {
   const [clicked, setClicked] = useState(false);
-  return <div >
+  return <div className="my-5 ">
     { <li
       className={`flex items-center group justify-between
       bg-dark-vdsb  border border-y-light-vdgb 
@@ -19,8 +19,8 @@ const CreateTodo = () => {
       >
         {clicked && <img src={CheckIcon} />}
       </div>
-        <input type="text" name="" id=""  className={`
-       bg-dark-vdsb py-5  px-6  w-full  active:border-0 placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
+        <input type="text" name="" id=""  className={`flex-1 ml-4 text-[18px]
+       bg-dark-vdsb py-5  px-6  w-4/5  active:border-0 placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
        text-light-lgb font-normal`} placeholder="Create a new todo..." />
    
     </li>}
