@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "./Heading";
 import Todos from "./Todos";
 import CreateTodo from "./CreateTodo";
-import WeirdName from "./WeirdName";
+import Other from "./Other";
 import Footer from "./Footer";
 
 const Card = () => {
@@ -11,7 +11,7 @@ const Card = () => {
       <Heading />
       <CreateTodo />
       <Todos />
-      <WeirdName />
+      <Other />
       <Footer />
     </div>
   );

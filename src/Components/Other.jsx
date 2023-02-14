@@ -1,6 +1,6 @@
 import React from "react";
 
-const WeirdName = () => {
+const Other = () => {
   return (
     <div className="flex justify-between text-light-lgb bg-dark-vdsb py-4 px-4 relative">
       <p>5 items left</p>
@@ -14,4 +14,4 @@ const WeirdName = () => {
   );
 };
 
-export default WeirdName;
+export default Other;
