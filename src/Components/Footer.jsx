@@ -1,10 +1,11 @@
-
-import React from 'react'
+import React from "react";
 
 function Footer() {
   return (
-    <div className='text-light-vdgb font-bold flex justify-center'>Drag and drop to reorder list </div>
-  )
+    <div className="mt-28 md:mt-8 text-light-vdgb font-bold flex justify-center ">
+      Drag and drop to reorder list
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;
