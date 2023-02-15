@@ -11,7 +11,7 @@ const CreateTodo = () => {
        >
         <div
         className={`w-[20px] h-[20px] border border-light-vdgb rounded-[50%]
-          outline-none flex items-center justify-center
+          outline-none flex items-center justify-center mx-5
          ${
            clicked ? "bg-gradient-to-r from-gradient-start to-gradient-end" : ""
          }`}
@@ -20,7 +20,7 @@ const CreateTodo = () => {
         {clicked && <img src={CheckIcon} />}
       </div>
         <input type="text" name="" id=""  className={`flex-1 ml-4 text-[18px]
-       bg-dark-vdsb py-5  px-6  w-4/5  active:border-0 placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
+       bg-dark-vdsb py-5  px-6  w-4/5  focus:outline-none placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
        text-light-lgb font-normal`} placeholder="Create a new todo..." />
    
     </li>}
