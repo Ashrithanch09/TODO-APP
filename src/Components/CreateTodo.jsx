@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import CheckIcon from "../assets/icon-check.svg";
 
-const CreateTodo = () => {
+const CreateTodo = ({mode, setMode}) => {
   const [clicked, setClicked] = useState(false);
   return <div className="my-5 ">
     { <li
       className={`flex items-center group justify-between
-      bg-dark-vdsb  border border-y-light-vdgb 
+      ${mode ?  "bg-light-vlgb": "bg-dark-vdsb"}  border border-y-light-vdgb 
       border-x-0 text-light-lgb font-normal `}
        >
         <div
@@ -20,7 +20,7 @@ const CreateTodo = () => {
         {clicked && <img src={CheckIcon} />}
       </div>
         <input type="text" name="" id=""  className={`flex-1 ml-4 text-[18px]
-       bg-dark-vdsb py-5  px-6  w-4/5  focus:outline-none placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
+       ${mode ?  "bg-light-vlgb": "bg-dark-vdsb"} py-5  px-6  w-4/5  focus:outline-none placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
        text-light-lgb font-normal`} placeholder="Create a new todo..." />
    
     </li>}
