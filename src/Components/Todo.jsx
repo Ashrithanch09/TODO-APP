@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Close from "../assets/icon-cross.svg";
 import CheckIcon from "../assets/icon-check.svg";
 
-const Todo = ({ task }) => {
+const Todo = ({ task, mode, setMode }) => {
   const [clicked, setClicked] = useState(false);
   return (
     <li
       className={`flex items-center group justify-between
-       bg-dark-vdsb py-5  px-6 border border-y-light-vdgb 
-       border-x-0 text-light-lgb font-normal`}
+        ${mode ?  "bg-light-vlgb": "bg-dark-vdsb"}  py-5  px-6 border border-y-light-vdgb 
+       border-x-0 text-light-lgb ${mode ?  "text-dark-vdb": "text-light-lgb"} font-normal`}
       onClick={() => setClicked(!clicked)}
     >
       <div
