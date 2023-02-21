@@ -10,14 +10,15 @@ const DetachedOther = ({ mode, setMode }) => {
       <p
         className={`mr-4 cursor-pointer 
         ${activeButton === "all" ? "text-brightBlue" : "text-dark-dgb"} 
-        `}
+        `} onClick={() => setActiveButton('all')}
       >
         All
       </p>
       <p
         className={`mr-4 cursor-pointer  
         ${activeButton === "active" ? "text-brightBlue" : "text-dark-dgb"} 
-        `}
+        `} onClick={() => setActiveButton('active')}
+        
       >
         Active
       </p>
@@ -25,6 +26,7 @@ const DetachedOther = ({ mode, setMode }) => {
         className={`mr-4  cursor-pointer 
         ${activeButton === "completed" ? "text-brightBlue" : "text-dark-dgb"}
         `}
+        onClick={() => setActiveButton('completed')}
       >
         Completed
       </p>
