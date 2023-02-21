@@ -7,8 +7,8 @@ const Todo = ({ task, mode, setMode }) => {
   return (
     <li
       className={`flex items-center group justify-between
-        ${mode ?  "bg-light-vlgb": "bg-dark-vdsb"}  py-5  px-6 border border-y-light-vdgb 
-       border-x-0 text-light-lgb ${mode ?  "text-dark-vdb": "text-light-lgb"} font-normal`}
+        ${mode==='light' ?  "bg-light-vlgb": "bg-dark-vdsb"}  py-5  px-6 border border-y-light-vdgb 
+       border-x-0  ${mode==='light' ?  "text-dark-vdb": "text-light-lgb"} font-normal`}
       onClick={() => setClicked(!clicked)}
     >
       <div
@@ -22,7 +22,7 @@ const Todo = ({ task, mode, setMode }) => {
       </div>
       <p
         className={`flex-1 ml-4 text-[18px] ${
-          clicked ? "line-through text-light-vdgb" : ""
+          clicked ? `line-through  ${mode ==='light '? 'text-light-lgb ': 'text-light-vdgb'}`: ""
         }`}
       >
         {task}
