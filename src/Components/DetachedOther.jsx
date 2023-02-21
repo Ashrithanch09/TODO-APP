@@ -4,7 +4,7 @@ const DetachedOther = ({ mode, setMode }) => {
   const [activeButton, setActiveButton] = useState("all");
   const contents = ["all", "active", "completed"];
 
-  let bg = mode ? "bg-light-vlgb" : "bg-dark-vdsb";
+  let bg = mode==='light' ? "bg-light-vlgb" : "bg-dark-vdsb";
 
   const activeColor = (content) =>
     activeButton === content ? "text-brightBlue" : "text-dark-dgb";

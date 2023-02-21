@@ -3,7 +3,7 @@ import Card from "./Components/Card";
 import "./App.css";
 
 function App() {
-  const [mode, setMode] = useState(false);
+  const [mode, setMode] = useState('dark');
 
   let modes_Settings = {
     darkMode: `bg-mobile-darkBG bg-dark-vdb md:bg-desktop-darkBG`,
@@ -13,7 +13,9 @@ function App() {
   let appSetting = mode ? modes_Settings.lightMode : modes_Settings.darkMode;
   return (
     <div
+
       className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%] ${appSetting}`}
+
     >
       <Card mode={mode} setMode={setMode} />
     </div>

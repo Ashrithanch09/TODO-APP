@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 const Card = ({mode, setMode}) => {
   return (
-    <div className="max-w-lg m-auto py-10 px-7">
+    <div className="max-w-lg m-auto py-10 px-7 ">
       <Heading mode={mode} setMode={setMode}/>
       <CreateTodo mode={mode} setMode={setMode}/>
       <Todos mode={mode} setMode={setMode}/>

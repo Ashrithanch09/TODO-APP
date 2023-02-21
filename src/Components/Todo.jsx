@@ -17,7 +17,9 @@ const Todo = ({ task, mode, setMode }) => {
 
   return (
     <li
+
       className={`${style.listStyle} flex items-center group justify-between py-5  px-6 border border-y-light-vdgb border-x-0 font-normal`}
+
       onClick={() => setClicked(!clicked)}
     >
       <div
@@ -26,7 +28,10 @@ const Todo = ({ task, mode, setMode }) => {
         {clicked && <img src={CheckIcon} />}
       </div>
 
+
+
       <p className={`${style.pStyle} flex-1 ml-4 text-[18px] `}>{task}</p>
+
 
       <img src={Close} className="invisible group-hover:visible" />
     </li>

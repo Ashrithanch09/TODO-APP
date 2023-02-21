@@ -3,11 +3,16 @@ import Moon from "../assets/icon-moon.svg";
 import Sun from "../assets/icon-sun.svg";
 
 const Heading = ({mode, setMode}) => {
+  const toggleFunction=()=>{
+    mode === 'dark' ? setMode('light') : setMode('dark');
+
+  }
+  console.log(mode);
   return (
     <div className=" flex justify-between items-center font-bold mb-5">
       <p className="text-4xl tracking-[1.5rem] uppercase text-light-vlg ">Todo</p>
-      <span onClick={() => setMode(!mode)}>
-        {mode ? <img src={Sun} className="w-8" />:  <img src={Moon} className="w-8" />}
+      <span onClick={toggleFunction}>
+        {mode === 'dark'? <img src={Sun} className="w-8" />:  <img src={Moon} className="w-8" />}
       </span>
       
      
