@@ -37,7 +37,10 @@ module.exports = {
 		extend: {
 			backgroundImage: {
 				"check-icon": "url('/src/assets/icon-check.svg')",
-				"hero-pattern": "url('/src/assets/bg-desktop-dark.jpg')",
+				"desktop-darkBG": "url('/src/assets/bg-desktop-dark.jpg')",
+				"desktop-lightBG": "url('/src/assets/bg-desktop-light.jpg')",
+				"mobile-darkBG": "url('/src/assets/bg-mobile-dark.jpg')",
+				"mobile-lightBG": "url('/src/assets/bg-mobile-light.jpg')"
 			},
 		}
 
