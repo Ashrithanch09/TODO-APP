@@ -2,34 +2,27 @@ import React, { useState } from "react";
 
 const DetachedOther = ({ mode, setMode }) => {
   const [activeButton, setActiveButton] = useState("all");
-  let bg = `${mode ? "bg-light-vlgb" : "bg-dark-vdsb"}`;
+  const contents = ["all", "active", "completed"];
+
+  let bg = mode ? "bg-light-vlgb" : "bg-dark-vdsb";
+
+  const activeColor = (content) =>
+    activeButton === content ? "text-brightBlue" : "text-dark-dgb";
+
   return (
     <div
-      className={`flex justify-center absolute top-20 left-0 right-0  ml-0  ${bg} py-4 rounded-md b md:static md:py-0 md:ml-9 md:justify-between `}
+      className={` ${bg} flex justify-center absolute top-20 left-0 right-0  ml-0   py-4 rounded-md b md:static md:py-0 md:ml-9 md:justify-between `}
     >
-      <p
-        className={`mr-4 cursor-pointer 
-        ${activeButton === "all" ? "text-brightBlue" : "text-dark-dgb"} 
-        `} onClick={() => setActiveButton('all')}
-      >
-        All
-      </p>
-      <p
-        className={`mr-4 cursor-pointer  
-        ${activeButton === "active" ? "text-brightBlue" : "text-dark-dgb"} 
-        `} onClick={() => setActiveButton('active')}
-        
-      >
-        Active
-      </p>
-      <p
-        className={`mr-4  cursor-pointer 
-        ${activeButton === "completed" ? "text-brightBlue" : "text-dark-dgb"}
-        `}
-        onClick={() => setActiveButton('completed')}
-      >
-        Completed
-      </p>
+      {contents.map((content) => (
+        <p
+          key={content}
+          tabIndex={1}
+          className={`mr-4 cursor-pointer ${activeColor(content)}`}
+          onClick={() => setActiveButton(content)}
+        >
+          {content[0].toUpperCase() + content.slice(1)}
+        </p>
+      ))}
     </div>
   );
 };
