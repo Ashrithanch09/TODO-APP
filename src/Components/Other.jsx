@@ -8,9 +8,9 @@ const Other = ({ mode, setMode }) => {
       ${mode==='light' ? "bg-light-vlgb" : "bg-dark-vdsb"} 
       py-4 px-2 relative rounded-b-md`}
     >
-      <p>5 items left</p>
+      <p className="cursor-pointer">5 items left</p>
       <DetachedOther mode={mode} setMode={setMode} />
-      <p>Clear Completed</p>
+      <p className="cursor-pointer">Clear Completed</p>
     </div>
   );
 };
