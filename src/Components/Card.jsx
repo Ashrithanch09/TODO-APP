@@ -5,13 +5,13 @@ import CreateTodo from "./CreateTodo";
 import Other from "./Other";
 import Footer from "./Footer";
 
-const Card = ({mode, setMode}) => {
+const Card = ({isDark, setIsDark}) => {
   return (
     <div className="max-w-lg m-auto py-10 px-7 ">
-      <Heading mode={mode} setMode={setMode}/>
-      <CreateTodo mode={mode} setMode={setMode}/>
-      <Todos mode={mode} setMode={setMode}/>
-      <Other mode={mode} setMode={setMode} />
+      <Heading isDark={isDark} setIsDark={setIsDark}/>
+      <CreateTodo isDark={isDark} setIsDark={setIsDark}/>
+      <Todos isDark={isDark} setIsDark={setIsDark}/>
+      <Other isDark={isDark} setIsDark={setIsDark}/>
       <Footer  />
     </div>
   );

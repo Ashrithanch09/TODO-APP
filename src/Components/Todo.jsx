@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import Close from "../assets/icon-cross.svg";
 import CheckIcon from "../assets/icon-check.svg";
 
-const Todo = ({ task, mode, setMode }) => {
+const Todo = ({ task, isDark, setIsDark}) => {
   const [clicked, setClicked] = useState(false);
-
   const style = {
-    listStyle: mode
+    listStyle: isDark
       ? "bg-light-vlgb text-dark-vdb"
       : "bg-dark-vdsb text-light-lgb",
     divStyle: clicked
