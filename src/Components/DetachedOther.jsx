@@ -11,7 +11,7 @@ const DetachedOther = ({ isDark, setIsDark }) => {
 
   return (
     <div
-      className={` ${bg} flex justify-center absolute top-20 left-0 right-0  ml-0   py-4 rounded-md b md:static md:py-0 md:ml-9 md:justify-between `}
+      className={` ${bg} flex justify-center absolute top-20 left-0 right-0  ml-0   py-4 rounded-md shadow-2xl md:static md:py-0 md:ml-9 md:justify-between `}
     >
       {contents.map((content) => (
         <p

@@ -12,6 +12,7 @@ const Todo = ({ task, isDark, setIsDark }) => {
     divStyle: clicked
       ? "bg-gradient-to-r from-gradient-start to-gradient-end"
       : "",
+    circle: isDark ? "border-light-vdgb" : "border-light-lgb",
     pStyle: clicked ? "line-through text-light-vdgb" : "",
   };
 
@@ -21,7 +22,7 @@ const Todo = ({ task, isDark, setIsDark }) => {
       onClick={() => setClicked(!clicked)}
     >
       <div
-        className={`${style.divStyle} w-[20px] h-[20px] border border-light-vdgb rounded-[50%] outline-none flex items-center justify-center`}
+        className={`${style.divStyle} ${style.circle} w-[20px] h-[20px] border border-light-lgb rounded-[50%] outline-none flex items-center justify-center`}
       >
         {clicked && <img src={CheckIcon} />}
       </div>

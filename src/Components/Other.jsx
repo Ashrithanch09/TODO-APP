@@ -5,7 +5,7 @@ const Other = ({ isDark, setIsDark }) => {
   const [divStyle] = [isDark ? "bg-light-vlgb" : "bg-dark-vdsb"];
   return (
     <div
-      className={`flex justify-between text-dark-dgb py-4 px-2 relative rounded-b-md  shadow-xl ${divStyle}`}
+      className={`flex justify-between text-dark-dgb py-4 px-7 relative rounded-b-md  shadow-xl ${divStyle}`}
     >
       <p className="cursor-pointer" tabIndex={1}>
         5 items left

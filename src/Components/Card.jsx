@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 const Card = ({ isDark, setIsDark }) => {
   return (
-    <div className="max-w-3xl m-auto mt-14 py-10 px-7">
+    <div className="max-w-2xl m-auto py-10 px-7 md:mt-14">
       <Heading isDark={isDark} setIsDark={setIsDark} />
       <CreateTodo isDark={isDark} setIsDark={setIsDark} />
       <Todos isDark={isDark} setIsDark={setIsDark} />
