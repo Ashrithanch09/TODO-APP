@@ -13,9 +13,7 @@ function App() {
   let appSetting = isDark ? modes_Settings.lightMode : modes_Settings.darkMode;
   return (
     <div
-
-      className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%] ${appSetting}`}
-
+      className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
       <Card isDark={isDark} setIsDark={setIsDark} />
     </div>
