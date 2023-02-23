@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-const DetachedOther = ({ mode, setMode }) => {
+const DetachedOther = ({ isDark, setIsDark }) => {
   const [activeButton, setActiveButton] = useState("all");
   const contents = ["all", "active", "completed"];
 
-  let bg = mode==='light' ? "bg-light-vlgb" : "bg-dark-vdsb";
+  let bg = isDark ? "bg-light-vlgb" : "bg-dark-vdsb";
 
   const activeColor = (content) =>
     activeButton === content ? "text-brightBlue" : "text-dark-dgb";

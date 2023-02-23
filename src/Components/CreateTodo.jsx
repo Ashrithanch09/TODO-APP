@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import CheckIcon from "../assets/icon-check.svg";
 
-const CreateTodo = ({ mode, setMode }) => {
+const CreateTodo = ({ isDark, setIsDark }) => {
   const [clicked, setClicked] = useState(false);
   return (
     <div className="my-5 rounded-md">
       {
         <li
           className={`flex items-center group justify-between
-      ${mode == 'light' ? "bg-light-vlgb" : "bg-dark-vdsb"}  border border-y-light-vdgb 
+      ${isDark ? "bg-light-vlgb" : "bg-dark-vdsb"}  border border-y-light-vdgb 
       border-x-0 text-light-lgb font-normal rounded-md`}
         >
           <div
@@ -30,7 +30,7 @@ const CreateTodo = ({ mode, setMode }) => {
             autoFocus
             className={`flex-1 ml-4 text-[18px] rounded-md
        ${
-         mode==='light' ? "bg-light-vlgb" : "bg-dark-vdsb"
+        isDark ? "bg-light-vlgb" : "bg-dark-vdsb"
        } py-5   w-4/5  focus:outline-none placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
        text-light-lgb font-normal`}
             placeholder="Create a new todo..."

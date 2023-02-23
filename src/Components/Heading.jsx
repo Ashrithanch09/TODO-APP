@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import Moon from "../assets/icon-moon.svg";
 import Sun from "../assets/icon-sun.svg";
 
-const Heading = ({mode, setMode}) => {
+const Heading = ({isDark, setIsDark}) => {
   const toggleFunction=()=>{
-    mode === 'dark' ? setMode('light') : setMode('dark');
+    setIsDark(!isDark)
 
   }
-  console.log(mode);
+
   return (
     <div className=" flex justify-between items-center font-bold mb-5">
       <p className="text-4xl tracking-[1.5rem] uppercase text-light-vlg ">Todo</p>
       <span onClick={toggleFunction}>
-        {mode === 'dark'? <img src={Sun} className="w-8" />:  <img src={Moon} className="w-8" />}
+        {isDark ?  <img src={Moon} className="w-8" />:  <img src={Sun} className="w-8" /> }
       </span>
       
      
