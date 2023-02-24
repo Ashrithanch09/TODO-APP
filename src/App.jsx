@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import Card from "./Components/Card";
 import "./App.css";
+
+export const DarkMode = createContext()
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -15,7 +17,9 @@ function App() {
     <div
       className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
-      <Card isDark={isDark} setIsDark={setIsDark} />
+      <DarkMode.Provider value={{isDark, setIsDark}}>
+      <Card  />
+      </DarkMode.Provider>
     </div>
   );
 }

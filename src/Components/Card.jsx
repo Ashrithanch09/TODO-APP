@@ -4,14 +4,16 @@ import Todos from "./Todos";
 import CreateTodo from "./CreateTodo";
 import Other from "./Other";
 import Footer from "./Footer";
+import { DarkMode } from "../App";
 
-const Card = ({ isDark, setIsDark }) => {
+const Card = () => {
+ 
   return (
     <div className="max-w-2xl m-auto py-10 px-7 md:mt-14">
-      <Heading isDark={isDark} setIsDark={setIsDark} />
-      <CreateTodo isDark={isDark} setIsDark={setIsDark} />
-      <Todos isDark={isDark} setIsDark={setIsDark} />
-      <Other isDark={isDark} setIsDark={setIsDark} />
+      <Heading  />
+      <CreateTodo  />
+      <Todos  />
+      <Other  />
       <Footer />
     </div>
   );
