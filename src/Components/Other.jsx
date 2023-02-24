@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkMode } from "../App";
 import DetachedOther from "./DetachedOther";
 
-const Other = ({ isDark, setIsDark }) => {
+const Other = () => {
+  const {isDark} = useContext(DarkMode)
   const [divStyle] = [isDark ? "bg-light-vlgb" : "bg-dark-vdsb"];
   return (
     <div
@@ -11,7 +13,7 @@ const Other = ({ isDark, setIsDark }) => {
         5 items left
       </p>
 
-      <DetachedOther isDark={isDark} setIsDark={setIsDark} />
+      <DetachedOther  />
 
       <button className="cursor-pointer" tabIndex={1}>
         Clear Completed

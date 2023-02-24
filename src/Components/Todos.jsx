@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-const Todos = ({ isDark, setIsDark }) => {
+const Todos = () => {
   const list = [
     "Complete Online Javascript course",
     "Jog around the park 3x",
@@ -14,7 +14,7 @@ const Todos = ({ isDark, setIsDark }) => {
     <section>
       <ul className="overflow-hidden rounded-tl-lg rounded-tr-lg  shadow-xl">
         {list.map((each, index) => (
-          <Todo task={each} key={index} isDark={isDark} setIsDark={setIsDark} />
+          <Todo task={each} key={index}  />
         ))}
       </ul>
     </section>
