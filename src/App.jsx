@@ -6,6 +6,7 @@ export const DarkMode = createContext()
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const [value, setValue]= useState([])
 
   let modes_Settings = {
     darkMode: `bg-mobile-darkBG bg-dark-vdb md:bg-desktop-darkBG`,
@@ -17,7 +18,7 @@ function App() {
     <div
       className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
-      <DarkMode.Provider value={{isDark, setIsDark}}>
+      <DarkMode.Provider value={{isDark, setIsDark, value, setValue}}>
       <Card  />
       </DarkMode.Provider>
     </div>
