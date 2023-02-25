@@ -4,7 +4,8 @@ import CheckIcon from "../assets/icon-check.svg";
 
 const CreateTodo = () => {
   const {isDark} = useContext(DarkMode)
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState('');
+  const [val, setVal] = useState('')
 
   const style = {
     containerDivStyle: isDark ? "bg-light-vlg" : " bg-dark-vdsb",
@@ -22,7 +23,7 @@ const CreateTodo = () => {
     >
       <div
         className={`${style.roundedDivStyle} w-[20px] h-[20px] border border-light-vdgb rounded-[50%] outline-none flex items-center justify-center ml-5`}
-        onClick={() => setClicked(!clicked)}
+        // onClick={() => setClicked(!clicked)}
       >
         {clicked && <img src={CheckIcon} />}
       </div>
@@ -33,7 +34,7 @@ const CreateTodo = () => {
         autoFocus
         className={`${style.inputStyle} flex-1 text-[18px] rounded-md w-4/5  focus:outline-none placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
        text-light-lgb font-normal`}
-        placeholder="Create a new todo..."
+        placeholder="Create a new todo..." onChange={(e)=>setClicked(e.target.value)} value={clicked}
       />
     </div>
   );
