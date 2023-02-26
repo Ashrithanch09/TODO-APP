@@ -8,7 +8,7 @@ const Todos = () => {
 
   return (
     <section>
-      <ul className="overflow-x-hidden rounded-tl-lg rounded-tr-lg  shadow-xl max-h-[408px] overflow-y-auto">
+      <ul className="rounded-tl-lg rounded-tr-lg  shadow-xl max-h-[408px] overflow-hidden hover:overflow-y-scroll">
         {list.map((each, index) => (
           <Todo task={each} key={index} />
         ))}
