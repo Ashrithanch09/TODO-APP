@@ -17,11 +17,11 @@ const CreateTodo = () => {
   };
   const handleKeyDown = () => {
     if (event.key === "Enter") {
-      setValue((prev) => [...prev, init]);
+      setValue((prev) => [init, ...prev]);
       setInit("");
     }
   };
-  console.log(value);
+  // console.log(value);
   return (
     <div
       className={`${style.containerDivStyle} my-8 rounded-md border-none outline-none flex gap-6 py-5`}
