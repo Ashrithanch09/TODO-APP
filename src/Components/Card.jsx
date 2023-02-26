@@ -9,7 +9,7 @@ const Card = ({ isDark, setIsDark }) => {
   return (
     <div className="max-w-2xl m-auto py-10 px-7 md:mt-14">
       <Heading isDark={isDark} setIsDark={setIsDark} />
-      <CreateTodo isDark={isDark} setIsDark={setIsDark} />
+      <CreateTodo isDark={isDark} />
       <Todos isDark={isDark} setIsDark={setIsDark} />
       <Other isDark={isDark} setIsDark={setIsDark} />
       <Footer />

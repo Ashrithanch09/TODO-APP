@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import CheckIcon from "../assets/icon-check.svg";
 
-const CreateTodo = ({ isDark, setIsDark }) => {
+const CreateTodo = ({ isDark }) => {
+  const value = useContext(DarkContext);
+  console.log(value);
   const [clicked, setClicked] = useState(false);
 
   const style = {
