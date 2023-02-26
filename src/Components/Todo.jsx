@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Close from "../assets/icon-cross.svg";
 import CheckIcon from "../assets/icon-check.svg";
-import { DarkContext } from "../App";
+import { DarkMode } from "../App";
 
 const Todo = ({ task }) => {
-  const { isDark } = React.useContext(DarkContext);
-
+  const { isDark } = useContext(DarkMode);
   const [clicked, setClicked] = useState(false);
 
   const style = {

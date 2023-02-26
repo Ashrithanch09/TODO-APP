@@ -1,30 +1,36 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from "react";
+import { DarkMode } from "../App";
 import CheckIcon from "../assets/icon-check.svg";
 
-const CreateTodo = ({ isDark }) => {
-  const value = useContext(DarkContext);
-  console.log(value);
-  const [clicked, setClicked] = useState(false);
+const CreateTodo = () => {
+  const { isDark, value, setValue } = useContext(DarkMode);
+  const [init, setInit] = useState("");
 
   const style = {
     containerDivStyle: isDark ? "bg-light-vlg" : " bg-dark-vdsb",
 
-    roundedDivStyle: clicked
+    roundedDivStyle: init
       ? "bg-gradient-to-r from-gradient-start to-gradient-end"
       : "",
 
     inputStyle: isDark ? "bg-light-vlg" : "bg-dark-vdsb",
   };
-
+  const handleKeyDown = () => {
+    if (event.key === "Enter") {
+      setValue((prev) => [...prev, init]);
+      setInit("");
+    }
+  };
+  console.log(value);
   return (
     <div
       className={`${style.containerDivStyle} my-8 rounded-md border-none outline-none flex gap-6 py-5`}
     >
       <div
         className={`${style.roundedDivStyle} w-[20px] h-[20px] border border-light-vdgb rounded-[50%] outline-none flex items-center justify-center ml-5`}
-        onClick={() => setClicked(!clicked)}
+        // onClick={() => setClicked(!clicked)}
       >
-        {clicked && <img src={CheckIcon} />}
+        {init && <img src={CheckIcon} />}
       </div>
 
       <input
@@ -34,6 +40,9 @@ const CreateTodo = ({ isDark }) => {
         className={`${style.inputStyle} flex-1 text-[18px] rounded-md w-4/5  focus:outline-none placeholder:text-xl placeholder:font-semibold placeholder:text-light-vdgb
        text-light-lgb font-normal`}
         placeholder="Create a new todo..."
+        value={init}
+        onChange={(e) => setInit(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
     </div>
   );

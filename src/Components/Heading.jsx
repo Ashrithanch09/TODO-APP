@@ -1,13 +1,13 @@
-import React, { useState, useContext } from "react";
-import { DarkContext } from "../App";
+import React, { useContext, useState } from "react";
+import { DarkMode } from "../App";
 import Moon from "../assets/icon-moon.svg";
 import Sun from "../assets/icon-sun.svg";
 
 const Heading = () => {
-  const { isDark, setIsDark } = useContext(DarkContext);
-
-  const toggleFunction = () => setIsDark(!isDark);
-
+  const { isDark, setIsDark } = useContext(DarkMode);
+  const toggleFunction = () => {
+    setIsDark(!isDark);
+  };
   return (
     <div className=" flex justify-between items-center font-bold mb-5">
       <p className="text-4xl tracking-[1.5rem] uppercase text-light-vlg ">

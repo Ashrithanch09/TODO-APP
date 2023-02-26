@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { createContext, useState } from "react";
 import Card from "./Components/Card";
 import "./App.css";
 
-export const DarkContext = React.createContext();
+export const DarkMode = createContext();
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const [value, setValue] = useState([]);
 
   let modes_Settings = {
     darkMode: `bg-mobile-darkBG bg-dark-vdb md:bg-desktop-darkBG`,
@@ -17,9 +18,9 @@ function App() {
     <div
       className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
-      <DarkContext.Provider value={{ isDark, setIsDark }}>
-        <Card isDark={isDark} setIsDark={setIsDark} />
-      </DarkContext.Provider>
+      <DarkMode.Provider value={{ isDark, setIsDark, value, setValue }}>
+        <Card />
+      </DarkMode.Provider>
     </div>
   );
 }
