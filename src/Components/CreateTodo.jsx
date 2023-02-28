@@ -27,7 +27,7 @@ const CreateTodo = () => {
       className={`${style.containerDivStyle} my-8 rounded-md border-none outline-none flex gap-6 py-5`}
     >
       <div
-        className={`${style.roundedDivStyle} w-[20px] h-[20px] border border-light-vdgb rounded-[50%] outline-none flex items-center justify-center ml-5`}
+        className={`${style.roundedDivStyle} w-[20px] h-[20px] border border-light-vdgb rounded-[50%] outline-none flex items-center justify-center ml-5 cursor-pointer`}
         // onClick={() => setClicked(!clicked)}
       >
         {init && <img src={CheckIcon} />}
