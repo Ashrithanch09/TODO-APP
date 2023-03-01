@@ -17,7 +17,14 @@ const CreateTodo = () => {
   };
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      setValue((prev) => [{ id: value.length + 1, text: init }, ...prev]);
+      const obj = {
+        id: value.length + 1,
+        text: init,
+        isActive: true,
+        isCompleted: false,
+      };
+
+      setValue((prev) => [obj, ...prev]);
       setInit("");
     }
   };
