@@ -9,14 +9,14 @@ function App() {
   const [value, setValue] = useState([]);
 
   let modes_Settings = {
-    darkMode: `bg-mobile-darkBG bg-dark-vdb md:bg-desktop-darkBG`,
+    darkMode: `bg-mobile-darkBG bg-dark-vdb md:bg-desktop-darkBG dark`,
     lightMode: `bg-mobile-lightBG bg-light-vlgb md:bg-desktop-lightBG`,
   };
 
   let appSetting = isDark ? modes_Settings.lightMode : modes_Settings.darkMode;
   return (
     <div
-      className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting} overflow-hidden`}
+      className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
       <DarkMode.Provider value={{ isDark, setIsDark, value, setValue }}>
         <Card />

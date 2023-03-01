@@ -3,14 +3,13 @@ import { DarkMode } from "../App";
 import Todo from "./Todo";
 
 const Todos = () => {
-  const { value } = useContext(DarkMode);
-  let list = value;
+  const { value: list } = useContext(DarkMode);
 
   return (
     <section>
       <ul className="rounded-tl-lg rounded-tr-lg  shadow-xl max-h-[408px] overflow-hidden hover:overflow-y-auto">
         {list.map((each, index) => (
-          <Todo task={each} key={index} />
+          <Todo task={each} key={index} index={index} />
         ))}
       </ul>
     </section>

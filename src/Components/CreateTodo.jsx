@@ -3,7 +3,7 @@ import { DarkMode } from "../App";
 import CheckIcon from "../assets/icon-check.svg";
 
 const CreateTodo = () => {
-  const { isDark, value, setValue } = useContext(DarkMode);
+  const { isDark, setValue } = useContext(DarkMode);
   const [init, setInit] = useState("");
 
   const style = {
@@ -15,20 +15,18 @@ const CreateTodo = () => {
 
     inputStyle: isDark ? "bg-light-vlg" : "bg-dark-vdsb",
   };
-  const handleKeyDown = () => {
+  const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       setValue((prev) => [init, ...prev]);
       setInit("");
     }
   };
-  // console.log(value);
   return (
     <div
       className={`${style.containerDivStyle} my-8 rounded-md border-none outline-none flex gap-6 py-5`}
     >
       <div
         className={`${style.roundedDivStyle} w-[20px] h-[20px] border border-light-vdgb rounded-[50%] outline-none flex items-center justify-center ml-5 cursor-pointer`}
-        // onClick={() => setClicked(!clicked)}
       >
         {init && <img src={CheckIcon} />}
       </div>

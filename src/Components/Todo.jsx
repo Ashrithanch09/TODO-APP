@@ -3,10 +3,10 @@ import Close from "../assets/icon-cross.svg";
 import CheckIcon from "../assets/icon-check.svg";
 import { DarkMode } from "../App";
 
-const Todo = ({ task, key }) => {
+const Todo = ({ task, index }) => {
   const { isDark, value } = useContext(DarkMode);
   const [clicked, setClicked] = useState(false);
-  console.log(key);
+  console.log(index);
 
   const style = {
     listStyle: isDark
@@ -36,7 +36,9 @@ const Todo = ({ task, key }) => {
         {clicked && <img src={CheckIcon} />}
       </div>
 
-      <p className={`${style.pStyle} flex-1 ml-4 text-[18px]`}>{task}</p>
+      <p className={`${style.pStyle} flex-1 ml-4 text-[18px] truncate`}>
+        {task}
+      </p>
 
       <img
         src={Close}
