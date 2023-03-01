@@ -4,9 +4,8 @@ import CheckIcon from "../assets/icon-check.svg";
 import { DarkMode } from "../App";
 
 const Todo = ({ task, index }) => {
-  const { isDark, value } = useContext(DarkMode);
+  const { isDark, value, setValue } = useContext(DarkMode);
   const [clicked, setClicked] = useState(false);
-  console.log(index);
 
   const style = {
     listStyle: isDark
@@ -17,10 +16,6 @@ const Todo = ({ task, index }) => {
       : "",
     circle: isDark ? "border-light-vdgb" : "border-light-lgb",
     pStyle: clicked ? "line-through text-light-vdgb" : "",
-  };
-  const handleDelete = () => {
-    value.filter((item) => item.id !== index);
-    console.log(index);
   };
 
   return (
@@ -47,6 +42,11 @@ const Todo = ({ task, index }) => {
       />
     </li>
   );
+
+  function handleDelete() {
+    const newValue = value.filter((item) => item.id !== index);
+    setValue(newValue);
+  }
 };
 
 export default Todo;

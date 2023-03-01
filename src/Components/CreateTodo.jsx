@@ -3,7 +3,7 @@ import { DarkMode } from "../App";
 import CheckIcon from "../assets/icon-check.svg";
 
 const CreateTodo = () => {
-  const { isDark, setValue } = useContext(DarkMode);
+  const { isDark, value, setValue } = useContext(DarkMode);
   const [init, setInit] = useState("");
 
   const style = {
@@ -17,7 +17,7 @@ const CreateTodo = () => {
   };
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      setValue((prev) => [init, ...prev]);
+      setValue((prev) => [{ id: value.length + 1, text: init }, ...prev]);
       setInit("");
     }
   };
