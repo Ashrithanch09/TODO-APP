@@ -17,7 +17,7 @@ const Todo = ({ task, index, isCompleted }) => {
     circle: isDark ? "border-light-vdgb" : "border-light-lgb",
     pStyle: clicked ? "line-through text-light-vdgb" : "",
   };
- 
+  console.log(todoList);
   return (
     <li
       className={`${style.listStyle} flex items-center group justify-between py-5  px-6 border-0 border-b 
@@ -26,7 +26,7 @@ const Todo = ({ task, index, isCompleted }) => {
       <div
         className={`${style.divStyle} ${style.circle} w-[20px] h-[20px] border border-light-lgb 
         rounded-[50%] outline-none flex items-center justify-center cursor-pointer`}
-        // onClick={handleCompleted}
+        onClick={handleCompleted}
       >
         {clicked && <img src={CheckIcon} />}
       </div>
@@ -43,17 +43,19 @@ const Todo = ({ task, index, isCompleted }) => {
     </li>
   );
 
-  function handleDelete(index) {
+  function handleDelete() {
     const newValue = todoList.filter((item) => item.id !== index);
     setTodoList(newValue);
   }
-  // function handleCompleted(index){
-  //   const newValue = todoList.map((item) =>{
-  //     return {...item}, !item.isCompleted : !isCompleted;
-  //   })
-  //   setTodoList(newValue);
-  //   console.log(todoList);
-  // }
+  function handleCompleted(){
+    const newTodoList = JSON.parse(JSON.stringify(todoList));
+    const newValue = newTodoList.map((item) =>{ 
+     return  item.id === index ? {...item, isCompleted : !isCompleted} : item;
+
+    })
+    setTodoList(newValue);
+    setClicked(!clicked)
+  }
 
 };
 

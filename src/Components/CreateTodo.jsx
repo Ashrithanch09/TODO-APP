@@ -20,7 +20,6 @@ const CreateTodo = () => {
       const obj = {
         id: todoList.length + 1,
         text: init,
-        isActive: true,
         isCompleted: false,
       };
 
