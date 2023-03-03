@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { DarkMode } from "../App";
+import { TodoData } from "../App";
 import CheckIcon from "../assets/icon-check.svg";
 
 const CreateTodo = () => {
-  const { isDark, value, setValue } = useContext(DarkMode);
+  const { isDark, todoList, setTodoList } = useContext(TodoData);
   const [init, setInit] = useState("");
 
   const style = {
@@ -16,15 +16,15 @@ const CreateTodo = () => {
     inputStyle: isDark ? "bg-light-vlg" : "bg-dark-vdsb",
   };
   const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
+    if (init && event.key === "Enter") {
       const obj = {
-        id: value.length + 1,
+        id: todoList.length + 1,
         text: init,
         isActive: true,
         isCompleted: false,
       };
 
-      setValue((prev) => [obj, ...prev]);
+      setTodoList((prev) => [obj, ...prev]);
       setInit("");
     }
   };
