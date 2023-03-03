@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import { DarkMode } from "../App";
+import { TodoData } from "../App";
 
 const DetachedOther = () => {
-  const {isDark} = useContext(DarkMode)
+  const {isDark} = useContext(TodoData)
   const [activeButton, setActiveButton] = useState("all");
   const contents = ["all", "active", "completed"];
 

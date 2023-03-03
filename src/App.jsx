@@ -2,11 +2,11 @@ import { createContext, useState } from "react";
 import Card from "./Components/Card";
 import "./App.css";
 
-export const DarkMode = createContext();
+export const TodoData = createContext();
 
 function App() {
   const [isDark, setIsDark] = useState(false);
-  const [value, setValue] = useState([]);
+  const [todoList, setTodoList] = useState([]);
 
   let modes_Settings = {
     darkMode: `bg-mobile-darkBG bg-dark-vdb md:bg-desktop-darkBG dark`,
@@ -18,9 +18,9 @@ function App() {
     <div
       className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
-      <DarkMode.Provider value={{ isDark, setIsDark, value, setValue }}>
+      <TodoData.Provider value={{ isDark, setIsDark, todoList, setTodoList }}>
         <Card />
-      </DarkMode.Provider>
+      </TodoData.Provider>
     </div>
   );
 }

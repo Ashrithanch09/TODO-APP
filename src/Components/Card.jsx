@@ -4,7 +4,7 @@ import Todos from "./Todos";
 import CreateTodo from "./CreateTodo";
 import Other from "./Other";
 import Footer from "./Footer";
-import { DarkMode } from "../App";
+
 
 const Card = () => {
   return (

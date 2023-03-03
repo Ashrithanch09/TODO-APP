@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import Close from "../assets/icon-cross.svg";
 import CheckIcon from "../assets/icon-check.svg";
-import { DarkMode } from "../App";
+import { TodoData } from "../App";
 
-const Todo = ({ task, index }) => {
-  const { isDark, value, setValue } = useContext(DarkMode);
+const Todo = ({ task, index, isCompleted }) => {
+  const { isDark, todoList, setTodoList} = useContext(TodoData);
   const [clicked, setClicked] = useState(false);
 
   const style = {
@@ -17,7 +17,7 @@ const Todo = ({ task, index }) => {
     circle: isDark ? "border-light-vdgb" : "border-light-lgb",
     pStyle: clicked ? "line-through text-light-vdgb" : "",
   };
-
+  console.log(todoList);
   return (
     <li
       className={`${style.listStyle} flex items-center group justify-between py-5  px-6 border-0 border-b 
@@ -26,7 +26,7 @@ const Todo = ({ task, index }) => {
       <div
         className={`${style.divStyle} ${style.circle} w-[20px] h-[20px] border border-light-lgb 
         rounded-[50%] outline-none flex items-center justify-center cursor-pointer`}
-        onClick={() => setClicked(!clicked)}
+        onClick={handleCompleted}
       >
         {clicked && <img src={CheckIcon} />}
       </div>
@@ -44,9 +44,19 @@ const Todo = ({ task, index }) => {
   );
 
   function handleDelete() {
-    const newValue = value.filter((item) => item.id !== index);
-    setValue(newValue);
+    const newValue = todoList.filter((item) => item.id !== index);
+    setTodoList(newValue);
   }
+  function handleCompleted(){
+    const newTodoList = JSON.parse(JSON.stringify(todoList));
+    const newValue = newTodoList.map((item) =>{ 
+     return  item.id === index ? {...item, isCompleted : !isCompleted} : item;
+
+    })
+    setTodoList(newValue);
+    setClicked(!clicked)
+  }
+
 };
 
 export default Todo;

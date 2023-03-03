@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { DarkMode } from "../App";
+import { TodoData } from "../App";
 import Moon from "../assets/icon-moon.svg";
 import Sun from "../assets/icon-sun.svg";
 
 const Heading = () => {
-  const { isDark, setIsDark } = useContext(DarkMode);
+  const { isDark, setIsDark } = useContext(TodoData);
   const toggleFunction = () => {
     setIsDark(!isDark);
   };
