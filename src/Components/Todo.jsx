@@ -17,7 +17,7 @@ const Todo = ({ task, index, isCompleted }) => {
     circle: isDark ? "border-light-vdgb" : "border-light-lgb",
     pStyle: clicked ? "line-through text-light-vdgb" : "",
   };
-  console.log(todoList);
+ 
   return (
     <li
       className={`${style.listStyle} flex items-center group justify-between py-5  px-6 border-0 border-b 

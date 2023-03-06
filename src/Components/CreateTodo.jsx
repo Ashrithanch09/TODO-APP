@@ -15,6 +15,7 @@ const CreateTodo = () => {
 
     inputStyle: isDark ? "bg-light-vlg" : "bg-dark-vdsb",
   };
+
   const handleKeyDown = (event) => {
     if (init && event.key === "Enter") {
       const obj = {
