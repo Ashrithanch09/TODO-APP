@@ -10,12 +10,8 @@ function App() {
   console.log(originalList)
   const [isDark, setIsDark] = useState(false);
   const [todoList, setTodoList] = useState(originalList);
-
-
-
-  useEffect(()=>{
     localStorage.setItem("todoList", JSON.stringify(todoList))
-   }, [todoList])
+  
 
 
   let modes_Settings = {
