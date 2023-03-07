@@ -8,22 +8,20 @@ const CreateTodo = () => {
 
   const style = {
     containerDivStyle: isDark ? "bg-light-vlg" : " bg-dark-vdsb",
-
     roundedDivStyle: init
       ? "bg-gradient-to-r from-gradient-start to-gradient-end"
       : "",
-
     inputStyle: isDark ? "bg-light-vlg" : "bg-dark-vdsb",
   };
 
   const handleKeyDown = (event) => {
     if (init && event.key === "Enter") {
       const obj = {
-        id: todoList.length + 1,
+        id: Date.now(),
         text: init,
         isCompleted: false,
       };
-
+      localStorage.setItem("todoList", JSON.stringify([obj, ...todoList]))
       setTodoList((prev) => [obj, ...prev]);
       setInit("");
     }
