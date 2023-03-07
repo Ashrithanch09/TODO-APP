@@ -5,13 +5,15 @@ import "./App.css";
 export const TodoData = createContext();
 
 function App() {
-  let localList = localStorage.getItem("todoList");
-  let originalList = localList ? JSON.parse(localList) : []
-  console.log(originalList)
+
   const [isDark, setIsDark] = useState(false);
-  const [todoList, setTodoList] = useState(originalList);
-    localStorage.setItem("todoList", JSON.stringify(todoList))
-  
+  const [todoList, setTodoList] = useState([]);
+    useEffect(()=>{
+      let localList = localStorage.getItem("todoList") 
+      let todoList = localList ? JSON.parse(localList) : []
+      setTodoList(todoList)
+    },[])
+    
 
 
   let modes_Settings = {
@@ -24,7 +26,7 @@ function App() {
     <div
       className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
-      <TodoData.Provider value={{ isDark, setIsDark, todoList, setTodoList, originalList }}>
+      <TodoData.Provider value={{ isDark, setIsDark, todoList, setTodoList }}>
         <Card />
       </TodoData.Provider>
     </div>
