@@ -5,17 +5,17 @@ import { TodoData } from "../App";
 
 const Todo = ({ task, index, isCompleted }) => {
   const { isDark, todoList, setTodoList} = useContext(TodoData);
-  const [clicked, setClicked] = useState(false);
+
 
   const style = {
     listStyle: isDark
       ? "bg-light-vlgb text-dark-vdb border-b-dark-lgb "
       : "bg-dark-vdsb text-light-lgb border-b-light-vdgb",
-    divStyle: clicked
+    divStyle: isCompleted
       ? "bg-gradient-to-r from-gradient-start to-gradient-end"
       : "",
     circle: isDark ? "border-light-vdgb" : "border-light-lgb",
-    pStyle: clicked ? "line-through text-light-vdgb" : "",
+    pStyle: isCompleted ? "line-through text-light-vdgb" : "",
   };
  
   return (
@@ -28,7 +28,7 @@ const Todo = ({ task, index, isCompleted }) => {
         rounded-[50%] outline-none flex items-center justify-center cursor-pointer`}
         onClick={handleCompleted}
       >
-        {clicked && <img src={CheckIcon} />}
+        {isCompleted && <img src={CheckIcon} />}
       </div>
 
       <p className={`${style.pStyle} flex-1 ml-4 text-[18px] truncate`}>
@@ -45,16 +45,16 @@ const Todo = ({ task, index, isCompleted }) => {
 
   function handleDelete() {
     const newValue = todoList.filter((item) => item.id !== index);
+    localStorage.setItem("todoList", JSON.stringify(newValue))
     setTodoList(newValue);
   }
   function handleCompleted(){
-    const newTodoList = JSON.parse(JSON.stringify(todoList));
-    const newValue = newTodoList.map((item) =>{ 
+    const newValue = todoList.map((item) =>{ 
      return  item.id === index ? {...item, isCompleted : !isCompleted} : item;
 
     })
+    localStorage.setItem("todoList", JSON.stringify(newValue))
     setTodoList(newValue);
-    setClicked(!clicked)
   }
 
 };
