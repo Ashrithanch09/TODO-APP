@@ -10,7 +10,7 @@ const Other = () => {
       className={`flex justify-between text-dark-dgb py-4 px-7 relative rounded-b-md  shadow-xl ${divStyle}`}
     >
       <p className="cursor-default" tabIndex={1}>
-        {(todoList.length) <= 1 ? 'item' : 'items'} left
+        {(todoList.length) <= 1 ?  `${todoList.length} item`: `${todoList.length} items`} left
       </p>
 
       <DetachedOther  />
