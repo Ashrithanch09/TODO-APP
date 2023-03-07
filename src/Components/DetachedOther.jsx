@@ -14,16 +14,18 @@ const DetachedOther = () => {
     
   const handleClick = (content) => {
     setActiveButton(content)
+    let todoList = JSON.parse(localStorage.getItem("todoList"));
     if (content == "active") {
       const newTodoList = todoList.filter((item) => item.isCompleted === false)
+      console.log(newTodoList);
       setTodoList(newTodoList)
       
-
     } else if (content== "completed"){
       const newTodoList = todoList.filter((item) => item.isCompleted === true)
+
       setTodoList(newTodoList)
     }else {
-      setTodoList(originalList)
+      setTodoList(todoList)
     }
   }
   return (
