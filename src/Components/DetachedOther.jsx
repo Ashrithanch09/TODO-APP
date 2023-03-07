@@ -18,8 +18,7 @@ const DetachedOther = () => {
     if (content == "active") {
       const newTodoList = todoList.filter((item) => item.isCompleted === false)
       console.log(newTodoList);
-      setTodoList(newTodoList)
-      
+      setTodoList(newTodoList);
     } else if (content== "completed"){
       const newTodoList = todoList.filter((item) => item.isCompleted === true)
 

@@ -3,7 +3,7 @@ import Close from "../assets/icon-cross.svg";
 import CheckIcon from "../assets/icon-check.svg";
 import { TodoData } from "../App";
 
-const Todo = ({ task, index, isCompleted }) => {
+const Todo = ({id:index, isCompleted, text:task}) => {
   const { isDark, todoList, setTodoList} = useContext(TodoData);
 
 

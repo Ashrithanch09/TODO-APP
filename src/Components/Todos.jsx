@@ -9,9 +9,7 @@ const Todos = () => {
   return (
     <section>
       <ul className="rounded-tl-lg rounded-tr-lg  shadow-xl max-h-[408px] overflow-hidden hover:overflow-y-auto">
-        {list.map((each) => (
-          <Todo task={each.text} key={each.id} index={each.id} isCompleted={each.isCompleted}/>
-        ))}
+        {list.map((each) => <Todo {...each} key={each.id}/>)}
       </ul>
     </section>
   );
