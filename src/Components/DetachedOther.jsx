@@ -21,7 +21,6 @@ const DetachedOther = () => {
       setTodoList(newTodoList);
     } else if (content== "completed"){
       const newTodoList = todoList.filter((item) => item.isCompleted === true)
-
       setTodoList(newTodoList)
     }else {
       setTodoList(todoList)

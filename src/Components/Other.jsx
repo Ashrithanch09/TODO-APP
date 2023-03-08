@@ -8,7 +8,7 @@ const Other = () => {
   function handleClear() {
     let localList = JSON.parse(localStorage.getItem("todoList") )
     const newTodoList = localList.filter((item) => item.isCompleted === false)
-    //localStorage.setItem("todoList", JSON.stringify(newTodoList))
+    localStorage.setItem("todoList", JSON.stringify(newTodoList))
     setTodoList(newTodoList);
   }
   return (
