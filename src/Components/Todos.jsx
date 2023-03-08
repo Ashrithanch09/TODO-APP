@@ -9,7 +9,12 @@ const Todos = () => {
     <section>
       <ul className="rounded-tl-lg rounded-tr-lg  shadow-xl max-h-[408px] overflow-hidden hover:overflow-y-auto">
         {list.map((each) => (
-          <Todo task={each.text} key={each.id} index={each.id} isCompleted={each.isCompleted}/>
+          <Todo
+            task={each.text}
+            key={each.id}
+            index={each.id}
+            isCompleted={each.isCompleted}
+          />
         ))}
       </ul>
     </section>
@@ -17,4 +22,3 @@ const Todos = () => {
 };
 
 export default Todos;
-

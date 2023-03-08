@@ -24,6 +24,7 @@ const CreateTodo = () => {
       };
 
       setTodoList((prev) => [obj, ...prev]);
+
       setInit("");
     }
   };
