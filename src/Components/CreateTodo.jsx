@@ -23,6 +23,7 @@ const CreateTodo = () => {
       };
       localStorage.setItem("todoList", JSON.stringify([obj, ...todoList]))
       setTodoList((prev) => [obj, ...prev]);
+
       setInit("");
     }
   };
