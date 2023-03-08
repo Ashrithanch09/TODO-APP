@@ -1,11 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Close from "../assets/icon-cross.svg";
 import CheckIcon from "../assets/icon-check.svg";
 import { TodoData } from "../App";
 
-const Todo = ({id:index, isCompleted, text:task}) => {
-  const { isDark, todoList, setTodoList} = useContext(TodoData);
-
+const Todo = ({
+  id: index,
+  isCompleted,
+  text: task,
+  listIndex,
+  dragStartIndex,
+  dragEndIndex,
+}) => {
+  const { isDark, todoList, setTodoList } = useContext(TodoData);
 
   const style = {
     listStyle: isDark
@@ -17,11 +23,15 @@ const Todo = ({id:index, isCompleted, text:task}) => {
     circle: isDark ? "border-light-vdgb" : "border-light-lgb",
     pStyle: isCompleted ? "line-through text-light-vdgb" : "",
   };
- 
+
   return (
     <li
       className={`${style.listStyle} flex items-center group justify-between py-5  px-6 border-0 border-b 
-       border-x-0 font-normal`}
+       border-x-0 font-normal  cursor-grab`}
+      draggable
+      onDragStart={() => (dragStartIndex.current = listIndex)}
+      onDragEnter={() => (dragEndIndex.current = listIndex)}
+      onDragEnd={handleDragEnd}
     >
       <div
         className={`${style.divStyle} ${style.circle} w-[20px] h-[20px] border border-light-lgb 
@@ -45,18 +55,29 @@ const Todo = ({id:index, isCompleted, text:task}) => {
 
   function handleDelete() {
     const newValue = todoList.filter((item) => item.id !== index);
-    localStorage.setItem("todoList", JSON.stringify(newValue))
-    setTodoList(newValue);
-  }
-  function handleCompleted(){
-    const newValue = todoList.map((item) =>{ 
-     return  item.id === index ? {...item, isCompleted : !isCompleted} : item;
 
-    })
-    localStorage.setItem("todoList", JSON.stringify(newValue))
+    localStorage.setItem("todoList", JSON.stringify(newValue));
+
     setTodoList(newValue);
   }
 
+  function handleCompleted() {
+    const newValue = todoList.map((item) => {
+      return item.id === index ? { ...item, isCompleted: !isCompleted } : item;
+    });
+
+    localStorage.setItem("todoList", JSON.stringify(newValue));
+
+    setTodoList(newValue);
+  }
+
+  function handleDragEnd() {
+    const newList = [...todoList];
+    const draggedItem = newList.splice(dragStartIndex.current, 1)[0];
+    newList.splice(dragEndIndex.current, 0, draggedItem);
+    setTodoList(newList);
+    localStorage.setItem("todoList", JSON.stringify(newList));
+  }
 };
 
 export default Todo;

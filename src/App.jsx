@@ -5,16 +5,14 @@ import "./App.css";
 export const TodoData = createContext();
 
 function App() {
-
   const [isDark, setIsDark] = useState(false);
   const [todoList, setTodoList] = useState([]);
-    useEffect(()=>{
-      let localList = localStorage.getItem("todoList") 
-      let todoList = localList ? JSON.parse(localList) : []
-      setTodoList(todoList)
-    },[])
-    
 
+  useEffect(() => {
+    let localList = localStorage.getItem("todoList");
+    let todoList = localList ? JSON.parse(localList) : [];
+    setTodoList(todoList);
+  }, []);
 
   let modes_Settings = {
     darkMode: `bg-mobile-darkBG bg-dark-vdb md:bg-desktop-darkBG dark`,
