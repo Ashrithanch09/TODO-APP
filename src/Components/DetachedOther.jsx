@@ -19,11 +19,12 @@ const DetachedOther = () => {
     if (content == "active") {
       const newTodoList = todoList.filter((item) => item.isCompleted === false);
       setTodoList(newTodoList);
-    } else if (content == "completed") {
-      const newTodoList = todoList.filter((item) => item.isCompleted === true);
-      setTodoList(newTodoList);
-    } else {
-      setTodoList(todoList);
+
+    } else if (content== "completed"){
+      const newTodoList = todoList.filter((item) => item.isCompleted === true)
+      setTodoList(newTodoList)
+    }else {
+      setTodoList(todoList)
     }
   };
   return (
