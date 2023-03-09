@@ -3,7 +3,8 @@ import { TodoData } from "../App";
 import CheckIcon from "../assets/icon-check.svg";
 
 const CreateTodo = () => {
-  const { isDark, todoList, setTodoList } = useContext(TodoData);
+  const { isDark, todoList, setTodoList, setActiveButton } =
+    useContext(TodoData);
   const [init, setInit] = useState("");
 
   const style = {
@@ -21,9 +22,9 @@ const CreateTodo = () => {
         text: init,
         isCompleted: false,
       };
-      localStorage.setItem("todoList", JSON.stringify([obj, ...todoList]))
+      localStorage.setItem("todoList", JSON.stringify([obj, ...todoList]));
       setTodoList((prev) => [obj, ...prev]);
-
+      setActiveButton("all");
       setInit("");
     }
   };

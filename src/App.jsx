@@ -6,6 +6,7 @@ export const TodoData = createContext();
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const [activeButton, setActiveButton] = useState("all");
   const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
@@ -24,7 +25,16 @@ function App() {
     <div
       className={`min-h-screen w-full bg-no-repeat  bg-[length:100%_30%]  pt-1 ${appSetting}`}
     >
-      <TodoData.Provider value={{ isDark, setIsDark, todoList, setTodoList }}>
+      <TodoData.Provider
+        value={{
+          isDark,
+          setIsDark,
+          todoList,
+          setTodoList,
+          activeButton,
+          setActiveButton,
+        }}
+      >
         <Card />
       </TodoData.Provider>
     </div>
