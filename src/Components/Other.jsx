@@ -3,7 +3,8 @@ import { TodoData } from "../App";
 import DetachedOther from "./DetachedOther";
 
 const Other = () => {
-  const { isDark, todoList, setTodoList } = useContext(TodoData);
+  const { isDark, todoList, setTodoList, setActiveButton } =
+    useContext(TodoData);
   const divStyle = isDark ? "bg-light-vlgb" : "bg-dark-vdsb";
 
   return (
@@ -33,6 +34,8 @@ const Other = () => {
     localStorage.setItem("todoList", JSON.stringify(newTodoList));
 
     setTodoList(newTodoList);
+
+    setActiveButton("all");
   }
 };
 
