@@ -22,8 +22,15 @@ const CreateTodo = () => {
         text: init,
         isCompleted: false,
       };
-      localStorage.setItem("todoList", JSON.stringify([obj, ...todoList]));
-      setTodoList((prev) => [obj, ...prev]);
+
+      const localStorageData = JSON.parse(localStorage.getItem("todoList"));
+      localStorage.setItem(
+        "todoList",
+        JSON.stringify([obj, ...localStorageData])
+      );
+      const updatedData = JSON.parse(localStorage.getItem("todoList"));
+
+      setTodoList(updatedData);
       setActiveButton("all");
       setInit("");
     }
