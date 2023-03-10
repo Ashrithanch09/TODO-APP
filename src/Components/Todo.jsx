@@ -11,7 +11,7 @@ const Todo = ({
   dragStartIndex,
   dragEndIndex,
 }) => {
-  const { isDark, todoList, setTodoList } = useContext(TodoData);
+  const { isDark, todoList, setTodoList, activeButton } = useContext(TodoData);
 
   const style = {
     listStyle: isDark
@@ -65,9 +65,16 @@ const Todo = ({
     const newValue = todoList.map((item) => {
       return item.id === index ? { ...item, isCompleted: !isCompleted } : item;
     });
+    const currentTodoListId = todoList.map((e) => e.id);
 
-    localStorage.setItem("todoList", JSON.stringify(newValue));
+    let localStorageDataNotChanged = JSON.parse(
+      localStorage.getItem("todoList")
+    ).filter((e) => !currentTodoListId.includes(e.id));
 
+    const updatedValues = [...newValue, ...localStorageDataNotChanged].sort(
+      (a, b) => a.id - b.id
+    );
+    localStorage.setItem("todoList", JSON.stringify(updatedValues));
     setTodoList(newValue);
   }
 
